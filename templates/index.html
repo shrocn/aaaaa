@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RasCube Gym - Elevate Your Fitness</title>
+    <style>
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #222;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar li a:hover {
+            color: #888;
+        }
+
+        .header-box {
+            background-color: #444;
+            padding: 50px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header-title {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: glowingTitle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowingTitle {
+            from {
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .intro {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #444;
+            font-weight: bold;
+            animation: glowingSubtitle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowingSubtitle {
+            from {
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .intro p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #444;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: glowingSubtitle 2s ease-in-out infinite alternate;
+        }
+
+        .section p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<div class="navbar">
+    <ul>
+        <li><a href="#section1">Home</a></li>
+        {% if 'username' not in session %}
+        <li><a href="login">Login</a></li>
+        {% else %}
+        <li><a href="logout">Logout</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+    <div class="header-box">
+        <h1 class="header-title">Elevate Your Fitness</h1>
+    </div>
+
+    <div class="intro">
+        <h1>Unleash Your Full Fitness Potential</h1>
+        <p>Experience a journey like <span style="font-weight: bold;">no other</span> with RasCube Gym. Elevate your workouts, accelerate progress, and achieve <span style="font-weight: bold;">peak performance</span>.</p>
+    </div>
+
+    <div class="section" id="section1">
+        <h2>Scientific Approach to Fitness</h2>
+        <p>Train smarter with RasCube Gym's innovative technology. <span style="font-weight: bold;">Uncover insights</span> from data-driven training for optimized workouts.</p>
+    </div>
+
+    <div class="section" id="section3">
+        <h2>Optimized Workout Environment</h2>
+        <p>Maximize results with our <span style="font-weight: bold;">state-of-the-art facilities</span>. Discover how the perfect workout environment <span style="font-weight: bold;">accelerates your fitness journey</span>.</p>
+    </div>
+
+    <div class="section" id="section4">
+        <h2>Elevate with Altitude Training</h2>
+        <p>Reach new heights in your fitness journey with <span style="font-weight: bold;">altitude training</span>. Experience <span style="font-weight: bold;">accelerated gains</span> and surpass your goals.</p>
+    </div>
+
+    <div class="section">
+        <h2>Track Your Progress</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="csv_file">
+            <br>
+            <input type="submit" value="Upload">
+        </form>
+        <img src="data:image/png;base64,{{ line_plot_data }}" alt="Workout Progress">
+        <img src="data:image/png;base64,{{ histogram_data }}" alt="Progress Distribution">
+        <img src="data:image/png;base64,{{ scatter_plot_data }}" alt="Intensity Map">
+    </div>
+</body>
+</html>

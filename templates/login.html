@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Change flex direction to column */
+            align-items: center;
+            justify-content: flex-start; /* Align content at the top */
+            height: 100vh;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .login-container {
+            width: 300px;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            margin-top: 20px; /* Add margin at the top */
+        }
+        label {
+            display: block;
+            color: #aaa;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #ff4c4c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff1a1a;
+        }
+        p {
+            color: #aaa;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        a {
+            color: #ff4c4c;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form method="POST" action="/login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Login">
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+            {% endif %}
+        </form>
+        <p>Don't have an account? <a href="/create">Create one</a></p>
+    </div>
+</body>
+</html>

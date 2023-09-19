@@ -1,0 +1,128 @@
+<style>
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #222;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar li a:hover {
+            color: #888;
+        }
+
+        .header-box {
+            background-color: #444;
+            padding: 50px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header-title {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: glowingTitle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowingTitle {
+            from {
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .intro {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #444;
+            font-weight: bold;
+            animation: glowingSubtitle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowingSubtitle {
+            from {
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .intro p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #444;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: glowingSubtitle 2s ease-in-out infinite alternate;
+        }
+
+        .section p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
